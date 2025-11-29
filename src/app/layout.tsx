@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ElevenLabs Conversational AI Demo",
-  description: "A demo of ElevenLabs Conversational AI",
+  title: "Neon Intelligence",
+  description: "Powered by DemLabs",
 };
 
 export default function RootLayout({
