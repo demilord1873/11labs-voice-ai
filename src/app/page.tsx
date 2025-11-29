@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 import Neon from '@/components/Neon'; // Adjust the import path as needed
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Home() {
   useEffect(() => {
@@ -99,7 +101,7 @@ export default function Home() {
               <ul className="list-disc list-inside text-gray-400">
                 <li>Github Repo Link</li>
                 <li>Integrating it in your code by cloning.</li>
-                <li>Here's the link - https://github.com/demilord1873/neon-intelligence.git</li>
+                <li><Link href="https://github.com/demilord1873/11Labs-voice-ai.git"><Button>Github Repo</Button></Link></li>
               </ul>
             </div>
             <div className="p-6 bg-gray-800 rounded-lg shadow-md glow-card">
