@@ -28,9 +28,9 @@ export default function Home() {
           <div className="text-2xl font-bold text-cyan-400 glow-text">Neon Intelligence</div>
           <ul className="flex space-x-6">
             <li><a href="#home" className="hover:text-cyan-300 transition-colors glow-hover">Home</a></li>
-            <li><a href="#about" className="hover:text-cyan-300 transition-colors glow-hover">About Us</a></li>
+            <li><a href="#about" className="hover:text-cyan-300 transition-colors glow-hover">About</a></li>
             <li><a href="#services" className="hover:text-cyan-300 transition-colors glow-hover">Services</a></li>
-            <li><a href="#test" className="hover:text-cyan-300 transition-colors glow-hover">Test AI</a></li>
+            <li><a href="#test" className="hover:text-cyan-300 transition-colors glow-hover">Test</a></li>
           </ul>
         </div>
       </nav>
