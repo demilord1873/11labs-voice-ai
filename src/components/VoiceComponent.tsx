@@ -17,10 +17,10 @@ const VoiceChat = () => {
 
   const conversation = useConversation({
     onConnect: () => {
-      console.log("Connected to ElevenLabs");
+      console.log("Connected to Neon");
     },
     onDisconnect: () => {
-      console.log("Disconnected from ElevenLabs");
+      console.log("Disconnected from Neon");
     },
     onMessage: (message) => {
       console.log("Received message:", message);
@@ -84,7 +84,7 @@ const VoiceChat = () => {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-          Voice Chat
+         Neon AI
           <div className="flex gap-2">
             <Button
               variant="outline"
@@ -111,7 +111,7 @@ const VoiceChat = () => {
                 className="w-full"
               >
                 <MicOff className="mr-2 h-4 w-4" />
-                End Conversation
+                End Session
               </Button>
             ) : (
               <Button
@@ -120,7 +120,7 @@ const VoiceChat = () => {
                 className="w-full"
               >
                 <Mic className="mr-2 h-4 w-4" />
-                Start Conversation
+                Start Session
               </Button>
             )}
           </div>
@@ -128,13 +128,13 @@ const VoiceChat = () => {
           <div className="text-center text-sm">
             {status === "connected" && (
               <p className="text-green-600">
-                {isSpeaking ? "Agent is speaking..." : "Listening..."}
+                {isSpeaking ? "Neon Is Speaking..." : "Listening..."}
               </p>
             )}
             {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             {!hasPermission && (
               <p className="text-yellow-600">
-                Please allow microphone access to use voice chat
+                Please allow microphone access to use Neon.
               </p>
             )}
           </div>
