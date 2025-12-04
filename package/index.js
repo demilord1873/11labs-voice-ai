@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 
 // ElevenLabs
@@ -10,12 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mic, MicOff, Volume2, VolumeX } from "lucide-react";
 
-const VoiceChat = () => {
-  const [hasPermission, setHasPermission] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+const [hasPermission, setHasPermission] = useState(false);
+const [isMuted, setIsMuted] = useState(false);
+const [errorMessage, setErrorMessage] = useState("");
 
-  const conversation = useConversation({
+const conversation = useConversation({
     onConnect: () => {
       console.log("Connected to Neon");
     },
@@ -25,7 +22,7 @@ const VoiceChat = () => {
     onMessage: (message) => {
       console.log("Received message:", message);
     },
-    onError: (error: string | Error) => {
+    onError: (error) => {
       setErrorMessage(typeof error === "string" ? error : error.message);
       console.error("Error:", error);
     },
@@ -33,52 +30,29 @@ const VoiceChat = () => {
 
   const { status, isSpeaking } = conversation;
 
-  useEffect(() => {
-    const requestMicPermission = async () => {
-      try {
-        await navigator.mediaDevices.getUserMedia({ audio: true });
-        setHasPermission(true);
-      } catch (error) {
-        setErrorMessage("Microphone access denied");
-        console.error("Error accessing microphone:", error);
-      }
-    };
-
-    requestMicPermission();
-  }, []);
-
-  const handleStartConversation = async () => {
+async function startNeon() {
     try {
       // Replace with your actual agent ID or URL
       const conversationId = await conversation.startSession({
-        agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID!,
+        agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID,
       });
-      console.log("Started conversation:", conversationId);
+      console.log("Started Neon:", conversationId);
     } catch (error) {
-      setErrorMessage("Failed to start conversation");
-      console.error("Error starting conversation:", error);
+      setErrorMessage("Failed to start Neon");
+      console.error("Error starting Neon:", error);
     }
   };
 
-  const handleEndConversation = async () => {
-    try {
+async function endNeon() {
+  try {
       await conversation.endSession();
     } catch (error) {
-      setErrorMessage("Failed to end conversation");
-      console.error("Error ending conversation:", error);
+      setErrorMessage("Failed to end Neon");
+      console.error("Error ending Neon:", error);
     }
   };
 
-  const toggleMute = async () => {
-    try {
-      await conversation.setVolume({ volume: isMuted ? 1 : 0 });
-      setIsMuted(!isMuted);
-    } catch (error) {
-      setErrorMessage("Failed to change volume");
-      console.error("Error changing volume:", error);
-    }
-  };
-
+function displayNeon() {
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
@@ -141,6 +115,30 @@ const VoiceChat = () => {
       </CardContent>
     </Card>
   );
+  };
+
+async function requestMicPermission() {
+      try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        setHasPermission(true);
+      } catch (error) {
+        setErrorMessage("Microphone access denied");
+        console.error("Error accessing microphone:", error);
+      }
+  };
+
+async function toggleMute() {
+  try {
+      await conversation.setVolume({ volume: isMuted ? 1 : 0 });
+      setIsMuted(!isMuted);
+    } catch (error) {
+      setErrorMessage("Failed to change volume");
+      console.error("Error changing volume:", error);
+    }
 };
 
-export default VoiceChat;
+module.exports = displayNeon;
+module.exports = startNeon;
+module.exports = endNeon;
+module.exports = requestMicPermission;
+module.exports = toggleMute;

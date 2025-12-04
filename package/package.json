@@ -1,0 +1,24 @@
+{
+  "name": "@demlabs/neon",
+  "version": "1.0.0",
+  "description": "A tool for integrating Neon Intelligence from Demlabs into your project.",
+  "keywords": [
+    "neon",
+    "demlabs"
+  ],
+  "homepage": "https://github.com/demilord1873/11labs-voice-ai#readme",
+  "bugs": {
+    "url": "https://github.com/demilord1873/11labs-voice-ai/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demilord1873/11labs-voice-ai.git"
+  },
+  "license": "ISC",
+  "author": "Luis Dem",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

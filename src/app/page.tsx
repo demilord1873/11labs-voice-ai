@@ -23,7 +23,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white font-sans overflow-hidden">
+    <div className="min-h-screen min-w-min bg-gradient-to-br from-black to-gray-900 text-white font-sans overflow-hidden ">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-md shadow-lg shadow-cyan-500/50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -97,11 +97,11 @@ export default function Home() {
             </div>
             <div className="p-6 bg-gray-800 rounded-lg shadow-md glow-card">
               <h3 className="text-2xl font-semibold mb-4">Integration Services</h3>
-              <p className="text-gray-400 mb-4">Effortlessly integrate our AI into your apps and websites. Just by the use of a Github Repository Link</p>
+              <p className="text-gray-400 mb-4">Effortlessly integrate our AI into your apps and websites. Just by using the Neon SDK.</p>
               <ul className="list-disc list-inside text-gray-400">
-                <li>Github Repo Link</li>
-                <li>Integrating it in your code by cloning.</li>
-                <li><Link href="https://github.com/demilord1873/11Labs-voice-ai.git"><Button>Github Repo</Button></Link></li>
+                <li>Visit the Neon SDK Website.</li>
+                <li>Follow instructions to integrate the agent.</li>
+                <li><Link href="https://neon-sdk.vercel.app"><Button>Neon SDK</Button></Link></li>
               </ul>
             </div>
             <div className="p-6 bg-gray-800 rounded-lg shadow-md glow-card">
@@ -125,6 +125,7 @@ export default function Home() {
           <p className="text-lg mb-6 text-gray-300 text-center">Experience the future at last. Interact with Neon below and see its capabilities in action.</p>
           <div className="p-8 bg-gray-800 rounded-lg shadow-md glow-card max-w-3xl mx-auto">
             <Neon />
+
           </div>
         </div>
       </section>
