@@ -1,22 +1,22 @@
 {
-  "name": "@demlabs/neon",
+  "name": "neon-demlabs",
   "version": "1.0.0",
-  "description": "A tool for integrating Neon Intelligence from Demlabs into your project.",
+  "description": "A tool for integrating neon ai into apps",
   "keywords": [
-    "neon",
-    "demlabs"
+    "Neon",
+    "DemLabs"
   ],
-  "homepage": "https://github.com/demilord1873/11labs-voice-ai#readme",
+  "homepage": "https://github.com/demilord1873/11Labs-voice-ai#readme",
   "bugs": {
-    "url": "https://github.com/demilord1873/11labs-voice-ai/issues"
+    "url": "https://github.com/demilord1873/11Labs-voice-ai/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demilord1873/11labs-voice-ai.git"
+    "url": "git+https://github.com/demilord1873/11Labs-voice-ai.git"
   },
   "license": "ISC",
   "author": "Luis Dem",
-  "type": "commonjs",
+  "types": "index.d.ts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
