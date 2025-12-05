@@ -57,7 +57,8 @@ function displayNeon() {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
-         Neon AI
+         {/* Name of Agent Goes Here */}
+         <p><em>Powered by DemLabs</em></p>
           <div className="flex gap-2">
             <Button
               variant="outline"
@@ -137,8 +138,8 @@ async function toggleMute() {
     }
 };
 
-module.exports = displayNeon;
-module.exports = startNeon;
-module.exports = endNeon;
-module.exports = requestMicPermission;
-module.exports = toggleMute;
+module.exports = { startNeon, endNeon, displayNeon, requestMicPermission, toggleMute };
+
+useEffect(() => {
+    requestMicPermission();
+  }, []);
