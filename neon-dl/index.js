@@ -1,5 +1,3 @@
 const Neon = require("./Neon");
 
-module.exports = {
-  Neon
-};
+module.exports = Neon;

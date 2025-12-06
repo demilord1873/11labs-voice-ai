@@ -1,10 +1,11 @@
 {
-  "name": "neon-demlabs",
-  "version": "1.0.3",
-  "description": "A tool for integrating neon ai into apps",
+  "name": "neon-dl",
+  "version": "1.0.0",
+  "description": "A tool from demlabs for integrating neon into apps.",
   "keywords": [
+    "Demlabs",
     "Neon",
-    "DemLabs"
+    "Integration"
   ],
   "homepage": "https://github.com/demilord1873/11Labs-voice-ai#readme",
   "bugs": {
@@ -16,8 +17,12 @@
   },
   "license": "ISC",
   "author": "Luis Dem",
-  "types": "index.d.ts",
+  "type": "commonjs",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "Neon.jsx"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }

@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 
 // ElevenLabs
@@ -25,7 +23,7 @@ const VoiceChat = () => {
     onMessage: (message) => {
       console.log("Received message:", message);
     },
-    onError: (error: string | Error) => {
+    onError: (error) => {
       setErrorMessage(typeof error === "string" ? error : error.message);
       console.error("Error:", error);
     },
@@ -51,7 +49,7 @@ const VoiceChat = () => {
     try {
       // Replace with your actual agent ID or URL
       const conversationId = await conversation.startSession({
-        agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID!,
+        agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID,
       });
       console.log("Started conversation:", conversationId);
     } catch (error) {
